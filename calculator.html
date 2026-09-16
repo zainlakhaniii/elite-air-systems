@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>HVAC Sizing Calculator — Elite Air Systems</title>
+<meta name="description" content="Estimate the heating and cooling capacity your room or home needs, and the right system type, with Elite Air Systems' quick HVAC sizing calculator." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="./" class="logo" aria-label="Elite Air Systems home">
+      <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="hf" x1="20" y1="4" x2="44" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#ffb066"/><stop offset=".45" stop-color="#ff6a34"/><stop offset="1" stop-color="#e01f2c"/></linearGradient>
+          <linearGradient id="hi" x1="34" y1="30" x2="58" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#bdeeff"/><stop offset=".5" stop-color="#4fb0f7"/><stop offset="1" stop-color="#1d74d6"/></linearGradient>
+        </defs>
+        <path d="M31 4c-2 9-9 12-9 22 0 3-2 5-4 6 1 2 1 4 0 6a13 13 0 0 0 25-4c0-8-4-11-6-17-1 4-3 5-3 2 0-6-1-11-3-15Z" fill="url(#hf)"/>
+        <path d="M44 30l13 8-3 15-15 2-4-13 13-12Z" fill="url(#hi)" stroke="#0b1222" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M44 30l-6 20M31 40l23-2M39 55l6-25" stroke="#d9f2ff" stroke-width="1" stroke-opacity=".55" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-word"><b>ELITE</b><span>Air Systems</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./">Home</a>
+      <a href="services.html">Services</a>
+      <a href="calculator.html" class="active">Calculator</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+61403187026" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>0403 187 026</a>
+      <a href="contact.html" class="btn btn-primary">Free Quote</a>
+      <button class="hamburger" id="openMenu" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" id="closeMenu" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <a href="./">Home</a>
+  <a href="services.html">Services</a>
+  <a href="calculator.html">Calculator</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+</div>
+
+<section class="page-hero">
+  <div class="hero-bg"><div class="grid-lines"></div><div class="glow glow-fire"></div><div class="glow glow-ice"></div></div>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Sizing Calculator</span>
+    <h1>How much <span class="fire-text">heating</span> &amp; <span class="ice-text">cooling</span> do you need?</h1>
+    <p>Answer a few quick questions and we'll estimate the capacity your space needs — and the type of system that suits it best. It takes about 30 seconds.</p>
+    <div class="crumbs"><a href="./">Home</a> &nbsp;/&nbsp; Calculator</div>
+  </div>
+</section><section class="section" style="padding-top:64px;">
+  <div class="wrap">
+    <form class="calc-grid" id="hvacCalc" autocomplete="off">
+      <div class="calc-form">
+        <div class="field">
+          <label for="c_area">Room / area size — floor area in m²</label>
+          <input type="number" id="c_area" name="c_area" min="1" max="1000" placeholder="e.g. 32" />
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="c_type">Space type</label>
+            <select id="c_type" name="c_type"><option value="living">Living room</option><option value="bedroom">Bedroom</option><option value="kitchen">Kitchen / dining</option><option value="open">Open-plan</option><option value="whole">Whole home</option></select>
+          </div>
+          <div class="field">
+            <label for="c_height">Ceiling height</label>
+            <select id="c_height" name="c_height"><option value="standard">Standard (2.4m)</option><option value="high">High (3m+)</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="c_ins">Insulation</label>
+            <select id="c_ins" name="c_ins"><option value="average">Average</option><option value="good">Well insulated</option><option value="poor">Poorly insulated</option></select>
+          </div>
+          <div class="field">
+            <label for="c_sun">Sun exposure</label>
+            <select id="c_sun" name="c_sun"><option value="medium">Average</option><option value="low">Mostly shaded</option><option value="high">Lots of sun / west-facing</option></select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c_people">Typical occupants</label>
+          <input type="number" id="c_people" name="c_people" min="1" max="30" value="2" />
+        </div>
+        <p class="calc-disclaimer">Tip: for whole-home ducted, enter your total conditioned floor area and choose "Whole home".</p>
+      </div>
+
+      <div class="calc-panel">
+        <div id="calcPlaceholder" class="calc-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4M15 3h4a2 2 0 0 1 2 2v4M9 21H5a2 2 0 0 1-2-2v-4M15 21h4a2 2 0 0 0 2-2v-4"/><path d="M8 12h8M12 8v8"/></svg>
+          <p>Enter your area to see a recommended capacity and system type.</p>
+        </div>
+        <div id="calcResult" hidden>
+          <div class="result-head">Estimated for <span id="r_area">—</span></div>
+          <div class="cap-row">
+            <div class="cap-card heat">
+              <div class="cap-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 5-3 6-3 10a3 3 0 0 0 6 0c0-2-1-3-1-5 2 1 4 3 4 7a6 6 0 1 1-12 0c0-5 5-6 6-12Z"/></svg> Heating</div>
+              <div class="cap-val"><span id="r_heat_lo">0</span>–<span id="r_heat_hi">0</span> <em>kW</em></div>
+            </div>
+            <div class="cap-card cool">
+              <div class="cap-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg> Cooling</div>
+              <div class="cap-val"><span id="r_cool_lo">0</span>–<span id="r_cool_hi">0</span> <em>kW</em></div>
+            </div>
+          </div>
+          <div class="sys-rec">
+            <div class="result-head">Suggested system</div>
+            <span class="sys-name" id="r_system">—</span>
+            <p class="sys-note" id="r_system_note">—</p>
+          </div>
+          <div class="calc-cta"><a href="contact.html" class="btn btn-primary">Get an Exact Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          <p class="calc-disclaimer">This is a guide only. Actual sizing depends on windows, orientation, building materials and airflow — our technicians confirm the precise capacity during your free in-home assessment.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section><section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:40px;"><span class="eyebrow center">Why It Matters</span><h2>Right-sized means comfortable — and cheaper to run.</h2></div>
+    <div class="services-grid">
+      <div class="svc fire reveal"><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 5-3 6-3 10a3 3 0 0 0 6 0c0-2-1-3-1-5 2 1 4 3 4 7a6 6 0 1 1-12 0c0-5 5-6 6-12Z"/></svg></div><h3>Not too big</h3><p>Oversized units short-cycle, waste energy, and leave rooms clammy. Correct sizing keeps bills down.</p></div>
+      <div class="svc ice reveal"><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg></div><h3>Not too small</h3><p>An undersized system runs flat-out and never quite gets there. We match capacity to your real load.</p></div>
+      <div class="svc dual reveal"><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4M9.3 17.7a4 4 0 1 0 5.4-5.4"/><circle cx="12" cy="12" r="2.5"/></svg></div><h3>Just right</h3><p>A properly engineered system is quieter, lasts longer, and holds your perfect temperature effortlessly.</p></div>
+    </div>
+  </div>
+</section><section class="section" style="padding-top:20px;">
+  <div class="wrap"><div class="cta-band reveal">
+    <span class="eyebrow center">Let's Get Started</span>
+    <h2>Ready for a home that's perfect in every season?</h2>
+    <p>Book your complimentary in-home assessment. Honest advice, a transparent fixed quote, and service only Elite expertise delivers.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary">Book a Free Assessment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="tel:+61403187026" class="btn btn-ghost">Call 0403 187 026</a>
+    </div>
+  </div></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="./" class="logo" aria-label="Elite Air Systems home">
+          <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="ff" x1="20" y1="4" x2="44" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#ffb066"/><stop offset=".45" stop-color="#ff6a34"/><stop offset="1" stop-color="#e01f2c"/></linearGradient>
+          <linearGradient id="fi" x1="34" y1="30" x2="58" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#bdeeff"/><stop offset=".5" stop-color="#4fb0f7"/><stop offset="1" stop-color="#1d74d6"/></linearGradient>
+        </defs>
+        <path d="M31 4c-2 9-9 12-9 22 0 3-2 5-4 6 1 2 1 4 0 6a13 13 0 0 0 25-4c0-8-4-11-6-17-1 4-3 5-3 2 0-6-1-11-3-15Z" fill="url(#ff)"/>
+        <path d="M44 30l13 8-3 15-15 2-4-13 13-12Z" fill="url(#fi)" stroke="#0b1222" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M44 30l-6 20M31 40l23-2M39 55l6-25" stroke="#d9f2ff" stroke-width="1" stroke-opacity=".55" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-word"><b>ELITE</b><span>Air Systems</span></span>
+        </a>
+        <p>Melbourne's heating and cooling specialists. Fire and ice, engineered for the modern Australian home.</p>
+        <div class="foot-badges"><span class="badge">Licensed &amp; Insured</span><span class="badge">VEU Approved</span></div>
+      </div>
+      <div class="foot-col"><h5>Explore</h5><a href="./">Home</a><a href="services.html">Services</a><a href="calculator.html">Sizing Calculator</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="foot-col"><h5>Systems</h5><a href="services.html#heating">Ducted Heating</a><a href="services.html#cooling">Refrigerated Cooling</a><a href="services.html#cooling">Split Systems</a><a href="services.html#cooling">Evaporative Cooling</a><a href="services.html#service">Service &amp; Repairs</a></div>
+      <div class="foot-col foot-contact"><h5>Contact</h5>
+        <a href="tel:+61403187026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> (+61) 0403 187 026</a>
+        <a href="mailto:info@eliteairsystems.com.au"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> info@eliteairsystems.com.au</a>
+        <a href="https://maps.google.com/?q=99+Hallam+South+Road+Hallam+VIC+3803" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> Factory 28, 99 Hallam South Road, Hallam VIC 3803</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Elite Air Systems. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zM4 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
